@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+    content %}
+    <form method="POST">
+      <h3 align="center">Sign Up</h3>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          placeholder="Enter first name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="property_type">Property Type</label>
+        <input
+          type="text"
+          class="form-control"
+          id="property_type"
+          name="property_type"
+          placeholder="Example: detached, semi-detached, terraced, flat, cottage, bungalow and mansion"
+        />
+      </div>
+      <div class="form-group">
+        <label for="number_of_rooms">Number of Rooms</label>
+        <input
+          type="number"
+          class="form-control"
+          id="number_of_rooms"
+          name="number_of_rooms"
+          placeholder="Number of rooms in property"
+        />
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          name="address"
+          placeholder="Enter Address"
+        />
+      </div>
+      <div class="form-group">
+        <label for="voucher">EVC</label>
+        <input
+          type="text"
+          class="form-control"
+          id="voucher"
+          name="voucher"
+          placeholder="Energy Voucher Code"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password2">Password (Confirm)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          placeholder="Confirm password"
+        />
+      </div>
+
+      <br />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endblock %}
