@@ -68,7 +68,26 @@ def sign_up():
     return render_template("sign_up.html", custo=current_user)
 
 
-@auth.route('/admin')
-@login_required
-def admin():
-    return render_template("admin.html")
+@auth.route('/admin_login', methods = ['GET','POST'])
+def admin_login():
+    admin_email = 'gse@shangrila.gov.un'
+    admin_password = 'gse@energy'
+
+    admin_exist = Admin.query.filter_by(admin_email = admin_email).first()
+    if not admin_exist:
+        new_admin = Admin(admin_email = admin_email, admin_password = generate_password_hash(admin_password, method = 'sha256'))
+        db.session.add(new_admin)
+        db.session.commit()
+
+    if request.method == 'POST':
+        email_input = request.form.get('admin_email')
+        password_input = request.form.get('admin_password')
+
+        if email_input != admin_email:
+            flash('Email not authorized. Not admin.', category = 'error')
+        elif password_input != admin_password:
+            flash('Password incorrect.', category = 'error')
+        else:
+            return render_template("admin_home.html")
+
+    return render_template("admin_login.html")

@@ -19,10 +19,12 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import Customer
+    from .models import Customer, Admin
 
     with app.app_context():
         db.create_all()
+
+    
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'

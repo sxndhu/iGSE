@@ -14,5 +14,6 @@ class Customer(db.Model, UserMixin):
 
 
 class Admin(db.Model, UserMixin):
-    email = db.Column(db.String(100), primary_key = True)
-    password = db.Column(db.String(50))
+    admin_email = db.Column(db.String(100), primary_key = True)
+    admin_password = db.Column(db.String(50))
+
