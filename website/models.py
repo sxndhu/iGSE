@@ -11,3 +11,8 @@ class Customer(db.Model, UserMixin):
     proptery_type = db.Column(db.String(50))
     number_of_bedrooms = db.Column(db.Integer)
     voucher = db.Column(db.String(8), unique = True)
+
+
+class Admin(db.Model, UserMixin):
+    email = db.Column(db.String(100), primary_key = True)
+    password = db.Column(db.String(50))
